@@ -22,5 +22,9 @@ export default {
   data: () => ({
     //
   }),
+
+  mounted () {
+    console.log(process.env.VUE_APP_API);
+  },
 };
 </script>

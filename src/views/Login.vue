@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
    data() {
        return {
@@ -56,10 +57,16 @@ export default {
    },
 
    methods: {
+       ...mapActions(['saveToken']),
+
        async login() {
            //alert("LOGIN")
            try {
-               /* let res = await */
+              
+              let res = await this.axios.post('http://localhost:4000/api/user/login', this.user)
+              console.log(res.data)
+              //console.log(this.saveToken(res.data.token))
+
            } catch (error) {
                
            }
